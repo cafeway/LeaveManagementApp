@@ -13,11 +13,11 @@ RecyclerView.Adapter<ApplicationAdapter.ApplicationViewHolder>(){
         val duration = itemView.findViewById<TextView>(R.id.duration)
         val applicationDate = itemView.findViewById<TextView>(R.id.apply)
         val leaveType = itemView.findViewById<TextView>(R.id.leaveType)
-        val status = itemView.findViewById<TextView>(R.id.status)
+//        val status = itemView.findViewById<TextView>(R.id.status)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ApplicationViewHolder {
-        val view = LayoutInflater.from(context).inflate(R.layout.content_employee_dash, parent, false)
+        val view = LayoutInflater.from(context).inflate(R.layout.content_login, parent, false)
         return  ApplicationViewHolder(view)
     }
 

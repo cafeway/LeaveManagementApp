@@ -109,69 +109,7 @@ android:background="@color/white"
             android:layout_marginEnd="10dp"
             app:cardCornerRadius="15dp"
             android:layout_width="match_parent"
-            android:layout_height="100dp">
-
-            <RelativeLayout
-                android:id="@+id/relative"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-
-                android:background="@color/green"
-                android:elevation="20dp">
-
-                <TextView
-                    android:id="@+id/duration"
-                    android:layout_width="154dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:fontFamily="@font/capriola"
-                    android:text="6 months"
-                    android:textColor="@color/black" />
-
-                <TextView
-                    android:id="@+id/applicationDate"
-                    android:layout_width="155dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/duration"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="5dp"
-                    android:fontFamily="@font/capriola"
-                    android:text="Wed Dec 2022"
-                    android:textColor="@color/black"
-                    android:textSize="20sp" />
-
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/status"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginBottom="20dp"
-                    android:gravity="center"
-                    android:shadowColor="@color/green"
-                    android:text="status"
-                    android:textColor="@color/black"
-                    app:chipBackgroundColor="#C63F43" />
-
-                <TextView
-                    android:id="@+id/leaveType"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/applicationDate"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="20dp"
-                    android:fontFamily="@font/capriola"
-                    android:text="Maternal Leabe"
-                    android:textColor="@color/black"
-
-                    android:textSize="18sp" />
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
+            android:layout_height="100dp"/>
 
     </ScrollView>
 
@@ -183,11 +121,22 @@ android:background="@color/white"
         app:backgroundTint="#052A73"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.892"
+        app:layout_constraintHorizontal_bias="0.932"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/cardView2"
-        app:layout_constraintVertical_bias="0.89"
+        app:layout_constraintVertical_bias="0.94"
         app:srcCompat="@drawable/ic_baseline_add_24"
         tools:ignore="SpeakableTextPresentCheck" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

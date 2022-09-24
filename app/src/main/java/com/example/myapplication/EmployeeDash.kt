@@ -15,10 +15,11 @@ class EmployeeDash : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.content_employee_dash)
 
+        // Passing User Email as an intent extra
         val bundle: Bundle? = intent.extras
         val a = bundle?.get("Email")
 
-        Log.d("Email","$a")
+
 
 
         // inflate layout with a button Click
