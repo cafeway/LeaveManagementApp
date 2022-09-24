@@ -25,10 +25,12 @@ android:background="@color/white"
         android:id="@+id/relativeLayout"
         android:layout_width="409dp"
         android:layout_height="113dp"
+        android:layout_marginStart="2dp"
         android:background="@color/purple_500"
         android:gravity="center_horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        tools:layout_editor_absoluteX="2dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
@@ -108,11 +110,13 @@ android:background="@color/white"
             app:cardCornerRadius="15dp"
             android:layout_width="match_parent"
             android:layout_height="100dp">
+
             <RelativeLayout
-                android:background="@color/green"
+                android:id="@+id/relative"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
 
+                android:background="@color/green"
                 android:elevation="20dp">
 
                 <TextView
@@ -128,7 +132,7 @@ android:background="@color/white"
                     android:textColor="@color/black" />
 
                 <TextView
-                    android:id="@+id/applicationdate"
+                    android:id="@+id/applicationDate"
                     android:layout_width="155dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/duration"
@@ -140,6 +144,7 @@ android:background="@color/white"
                     android:textSize="20sp" />
 
                 <com.google.android.material.chip.Chip
+                    android:id="@+id/status"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -157,7 +162,7 @@ android:background="@color/white"
                     android:id="@+id/leaveType"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/applicationdate"
+                    android:layout_below="@+id/applicationDate"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="20dp"
                     android:fontFamily="@font/capriola"

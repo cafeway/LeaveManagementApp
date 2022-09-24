@@ -129,7 +129,7 @@ android:background="@color/white"
                 android:textColor="@color/black" />
 
             <TextView
-                android:id="@+id/applicationdate"
+                android:id="@+id/applicationDate"
                 android:layout_width="155dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/duration"
@@ -158,7 +158,7 @@ android:background="@color/white"
                 android:id="@+id/leaveType"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/applicationdate"
+                android:layout_below="@+id/applicationDate"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/capriola"

@@ -50,7 +50,7 @@
 
             <TextView
                 android:textColor="@color/black"
-                android:id="@+id/applicationdate"
+                android:id="@+id/applicationDate"
                 android:layout_width="155dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/duration"
@@ -79,7 +79,7 @@
                 android:id="@+id/leaveType"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/applicationdate"
+                android:layout_below="@+id/applicationDate"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/capriola"
