@@ -8,6 +8,7 @@
         <entry key="app/src/main/res/drawable/ic_baseline_cancel_24.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/drawable/id.xml" value="0.19895833333333332" />
         <entry key="app/src/main/res/layout/activity_employee_dash.xml" value="0.11480263157894736" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.11480263157894736" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.18" />
         <entry key="app/src/main/res/layout/activity_sign_in.xml" value="0.15" />
         <entry key="app/src/main/res/layout/activity_view_applications.xml" value="0.22" />

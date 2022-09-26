@@ -13,7 +13,6 @@
         android:layout_margin="10dp">
 
         <TextView
-            android:textColor="@color/black"
             android:id="@+id/duration"
             android:layout_width="154dp"
             android:layout_height="wrap_content"
@@ -22,7 +21,8 @@
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
             android:fontFamily="@font/capriola"
-            android:text="6 months" />
+            android:text="6 months"
+            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/applicationDate"
@@ -51,7 +51,6 @@
             app:chipBackgroundColor="#C63F43" />
 
         <TextView
-            android:textColor="@color/black"
             android:id="@+id/leaveType"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -60,6 +59,7 @@
             android:layout_marginTop="20dp"
             android:fontFamily="@font/capriola"
             android:text="Maternal Leabe"
+            android:textColor="@color/black"
 
             android:textSize="18sp" />
     </RelativeLayout>

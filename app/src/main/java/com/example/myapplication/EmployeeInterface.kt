@@ -1,6 +1,7 @@
 package com.example.myapplication
 
 import okhttp3.ResponseBody
+import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -14,6 +15,6 @@ interface EmployeeInterface {
     suspend fun apply(@Body application: Application): Response<ResponseBody>
 
 
-    @GET("https://lmske.herokuapp.com/api/getUserInfo")
-    suspend fun  getUserInfo():Response<ResponseBody>
+    @GET("https://lmske.herokuapp.com/api/application/show")
+    fun getUserInfo():Call<MutableList<Application>>
 }

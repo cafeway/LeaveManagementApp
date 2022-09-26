@@ -127,30 +127,5 @@ class ApplyLeave : AppCompatActivity(){
 
     }
 
-    fun getUser () {
-
-        // create retrofit instance
-        val retrofit = Retrofit.Builder()
-            .baseUrl("https://i-sms.herokuapp.com/")
-            .addConverterFactory( GsonConverterFactory.create())
-            .build()
-
-
-        // Create a service
-        val service = retrofit.create(EmployeeInterface::class.java)
-
-        CoroutineScope(Dispatchers.IO).launch {
-           val response = service.getUserInfo()
-            withContext(Dispatchers.Main){
-                // test if the response was successfull
-
-                if (response.isSuccessful){
-                    Log.d("Success","Request was successfull")
-                } else {
-
-                }
-            }
-        }
-    }
 
 }

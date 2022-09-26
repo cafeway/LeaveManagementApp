@@ -112,10 +112,9 @@ class Login : AppCompatActivity() {
             PhoneNumber.text.toString(),
             Position.selectedItem.toString(),
             Department.selectedItem.toString(),
-                    Email.text.toString(),
+            Email.text.toString(),
             Password.text.toString(),
             Nssf.text.toString(),
-
             Gender.selectedItem.toString(),
         )
 

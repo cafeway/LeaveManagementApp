@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         val fab = findViewById<FloatingActionButton>(R.id.button)
 
         fab.setOnClickListener() {
-            val intent = Intent(this, sign_in::class.java).apply {
+            val intent = Intent(this, Login::class.java).apply {
 
             }
             startActivity(intent)
