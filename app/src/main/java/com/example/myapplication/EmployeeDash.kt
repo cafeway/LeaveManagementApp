@@ -4,6 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.JsonToken
 import android.util.Log
+import android.view.View
+import android.widget.Adapter
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -28,12 +30,13 @@ import kotlin.math.log
 
 class EmployeeDash : AppCompatActivity() {
 
-    lateinit var applicationAdapter: ApplicationAdapter
+    lateinit var adapter: ApplicationAdapter
     lateinit var applicationRV: RecyclerView
     lateinit var applicationList: ArrayList<Application>
 
-    lateinit var adapter: ApplicationAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
+
 
 
         applicationList = ArrayList()
@@ -41,12 +44,25 @@ class EmployeeDash : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.content_employee_dash)
 
+
+
         // Passing User Email as an intent extra
         val bundle: Bundle? = intent.extras
         val a = bundle?.get("Email")
 
+        getApplications()
 
 
+        // inflate layout with a button Click
+        val button = findViewById<FloatingActionButton>(R.id.button)
+        button.setOnClickListener{
+            val intent2 = Intent(applicationContext,ApplyLeave::class.java).putExtra("Email","Email1@gmail.com")
+            startActivity(intent2)
+        }
+
+    }
+
+    private fun getApplications() {
         // Create Retrofit Instance
         val retrofit = Retrofit.Builder()
             .baseUrl("https://i-sms.herokuapp.com/")
@@ -63,13 +79,7 @@ class EmployeeDash : AppCompatActivity() {
                 call: Call<MutableList<Application>>,
                 response: Response<MutableList<Application>>
             ) {
-                adapter = ApplicationAdapter(baseContext,response.body() as MutableList<Application>)
-                adapter.notifyDataSetChanged()
-                val Rv = findViewById<RecyclerView>(R.id.Rv)
-                val linearLayoutManager = LinearLayoutManager(this@EmployeeDash)
-                Rv.layoutManager = linearLayoutManager
-                Rv.setHasFixedSize(true)
-                Rv.adapter = adapter
+
 
             }
 
@@ -78,16 +88,9 @@ class EmployeeDash : AppCompatActivity() {
             }
 
         })
-
-
-        // inflate layout with a button Click
-        val button = findViewById<FloatingActionButton>(R.id.button)
-        button.setOnClickListener{
-            val intent2 = Intent(applicationContext,ApplyLeave::class.java).putExtra("Email","Email1@gmail.com")
-            startActivity(intent2)
-        }
-
     }
+
+
 
 
 }

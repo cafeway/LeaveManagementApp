@@ -72,7 +72,8 @@ android:background="@color/white"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/Rv"
+
+        android:id="@+id/rv"
         android:layout_width="409dp"
         android:layout_height="755dp"
         android:layout_marginStart="1dp"
