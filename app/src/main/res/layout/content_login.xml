@@ -4,23 +4,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:background="@color/white"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="20dp"
+    app:cardCornerRadius="10dp"
+    android:clickable="true"
+    android:layout_margin="5dp"
+   android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     <RelativeLayout
-        android:layout_width="match_parent"
+        android:layout_width="401dp"
         android:layout_height="match_parent"
-        android:layout_margin="10dp">
+        android:layout_margin="0dp"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="64dp"
+            android:layout_height="34dp"
+            android:layout_below="@+id/imageView6"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/ic_baseline_pending_actions_24" />
 
         <TextView
             android:id="@+id/duration"
             android:layout_width="154dp"
             android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="75dp"
             android:layout_marginBottom="10dp"
             android:fontFamily="@font/capriola"
+            android:gravity="center"
             android:text="6 months"
             android:textColor="@color/black" />
 
@@ -29,38 +48,67 @@
             android:layout_width="155dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/duration"
+            android:layout_alignParentEnd="true"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="75dp"
             android:fontFamily="@font/capriola"
+            android:gravity="center"
             android:text="Wed Dec 2022"
             android:textColor="@color/black"
             android:textSize="20sp" />
 
         <com.google.android.material.chip.Chip
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:clickable="true"
+            android:id="@+id/status_chip"
+            android:layout_width="81dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/leaveType"
             android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="75dp"
             android:layout_marginBottom="20dp"
             android:gravity="center"
-            android:textColor="@color/black"
             android:shadowColor="@color/green"
             android:text="status"
+            android:textColor="@color/black"
             app:chipBackgroundColor="#C63F43" />
 
         <TextView
             android:id="@+id/leaveType"
-            android:layout_width="wrap_content"
+            android:layout_width="178dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/applicationDate"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="19dp"
+            android:layout_marginEnd="75dp"
             android:fontFamily="@font/capriola"
+            android:gravity="center"
+
             android:text="Maternal Leabe"
             android:textColor="@color/black"
-
             android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="65dp"
+            android:layout_height="34dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/ic_baseline_access_time_24" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="64dp"
+            android:layout_height="34dp"
+            android:layout_below="@+id/imageView4"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp
+"
+            app:srcCompat="@drawable/ic_baseline_date_range_24" />
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

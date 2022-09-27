@@ -110,63 +110,12 @@ android:background="@color/white"
         android:layout_marginTop="10dp"
         app:layout_constraintTop_toBottomOf="@id/cardView2">
 
-        <RelativeLayout
+        <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            android:elevation="20dp">
+            android:id="@+id/adminRv"
+            />
 
-            <TextView
-                android:id="@+id/duration"
-                android:layout_width="154dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp"
-                android:fontFamily="@font/capriola"
-                android:text="6 months"
-                android:textColor="@color/black" />
-
-            <TextView
-                android:id="@+id/applicationDate"
-                android:layout_width="155dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/duration"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="5dp"
-                android:fontFamily="@font/capriola"
-                android:text="Wed Dec 2022"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
-
-            <com.google.android.material.chip.Chip
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginBottom="20dp"
-                android:gravity="center"
-                android:shadowColor="@color/green"
-                android:text="status"
-                android:textColor="@color/black"
-                app:chipBackgroundColor="#C63F43" />
-
-            <TextView
-                android:id="@+id/leaveType"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/applicationDate"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
-                android:fontFamily="@font/capriola"
-                android:text="Maternal Leabe"
-                android:textColor="@color/black"
-
-                android:textSize="18sp" />
-        </RelativeLayout>
     </ScrollView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

@@ -6,16 +6,15 @@ import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import com.example.myapplication.databinding.ActivityLoginBinding
 import com.google.gson.Gson
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import retrofit2.Retrofit
-import com.example.myapplication.Employee
+import com.example.myapplication.Models.Employee
+import com.example.myapplication.Models.Reg_error
+import com.example.myapplication.interfaces.EmployeeInterface
 import retrofit2.converter.gson.GsonConverterFactory
 
 class Login : AppCompatActivity() {
@@ -135,7 +134,7 @@ class Login : AppCompatActivity() {
 
 
                     val gson = Gson()
-                    val b = gson.fromJson(items,Reg_error::class.java)
+                    val b = gson.fromJson(items, Reg_error::class.java)
                     Log.d("aa","${b.Error}")
                     var toast= Toast.makeText(applicationContext,"Employee account has been created successfully",Toast.LENGTH_LONG)
 

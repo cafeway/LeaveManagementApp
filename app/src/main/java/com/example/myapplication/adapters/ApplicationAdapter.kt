@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.myapplication.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,8 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication.Models.Application
+import com.example.myapplication.R
+import com.google.android.material.chip.Chip
 
-class ApplicationAdapter (private  val context: Context,private val applications: MutableList<Application>):
+class ApplicationAdapter (private  val context: Context,private val applications: ArrayList<Application>):
     RecyclerView.Adapter<ApplicationAdapter.ViewHolder>() {
     private val layoutInflater = LayoutInflater.from(context)
 
@@ -15,6 +18,7 @@ class ApplicationAdapter (private  val context: Context,private val applications
         val duration = itemView.findViewById<TextView?>(R.id.duration)
         val applicationDate = itemView.findViewById<TextView>(R.id.applicationDate)
         val type = itemView.findViewById<TextView>(R.id.leaveType)
+        val status = itemView.findViewById<Chip>(R.id.status_chip)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -24,9 +28,11 @@ class ApplicationAdapter (private  val context: Context,private val applications
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        holder.duration.text = applications[position].Duration
+        holder.duration.text = applications.get(position).Duration
         holder.applicationDate.text = applications[position].Date
         holder.type.text = applications[position].Type
+        holder.status.text = applications[position].Status
+
     }
 
     override fun getItemCount(): Int {

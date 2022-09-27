@@ -8,6 +8,9 @@ import android.util.Log
 import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import com.example.myapplication.Models.Application
+import com.example.myapplication.Models.Reg_error
+import com.example.myapplication.interfaces.EmployeeInterface
 import com.google.gson.Gson
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -99,7 +102,7 @@ class ApplyLeave : AppCompatActivity(){
                     Log.d("Success","$body")
 //                     convert the json response obtained to gson and cast to a model
                     val gson = Gson()
-                    val bodyGson = gson.fromJson(body,Reg_error::class.java)
+                    val bodyGson = gson.fromJson(body, Reg_error::class.java)
 
                     Log.d("bodyJson", bodyGson.Field.toString())
 

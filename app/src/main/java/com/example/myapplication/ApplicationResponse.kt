@@ -1,8 +1,8 @@
 package com.example.myapplication
 
+import com.example.myapplication.Models.Application
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import java.util.ArrayList
 
 @Serializable
 data class ApplicationResponse(

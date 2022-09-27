@@ -6,19 +6,15 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import com.example.myapplication.AuthenicationInterface
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
+import com.example.myapplication.Models.Reg_error
+import com.example.myapplication.interfaces.AuthenicationInterface
 import com.example.myapplication.databinding.ActivitySignInBinding
 import com.google.gson.Gson
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import com.example.myapplication.Reg_error
 import kotlinx.coroutines.withContext
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -72,7 +68,7 @@ class sign_in : AppCompatActivity() {
                     Log.d("Success","$body")
 //                     convert the json response obtained to gson and cast to a model
                     val gson = Gson()
-                    val bodyGson = gson.fromJson(body,Reg_error::class.java)
+                    val bodyGson = gson.fromJson(body, Reg_error::class.java)
 
                     Log.d("bodyJson", bodyGson.Field.toString())
 
