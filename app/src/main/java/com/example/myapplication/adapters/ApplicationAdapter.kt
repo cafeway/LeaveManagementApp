@@ -15,10 +15,10 @@ class ApplicationAdapter (private  val context: Context,private val applications
     private val layoutInflater = LayoutInflater.from(context)
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        val duration = itemView.findViewById<TextView?>(R.id.duration)
+//        val duration = itemView.findViewById<TextView?>(R.id.duration)
         val applicationDate = itemView.findViewById<TextView>(R.id.applicationDate)
-        val type = itemView.findViewById<TextView>(R.id.leaveType)
-        val status = itemView.findViewById<Chip>(R.id.status_chip)
+        val type = itemView.findViewById<TextView>(R.id.LeaveType)
+        val status = itemView.findViewById<Chip>(R.id.chip)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -27,11 +27,9 @@ class ApplicationAdapter (private  val context: Context,private val applications
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
-        holder.duration.text = applications.get(position).Duration
-        holder.applicationDate.text = applications[position].Date
-        holder.type.text = applications[position].Type
-        holder.status.text = applications[position].Status
+        holder.applicationDate.text = applications.get(position).StartDate
+        holder.type.text = applications.get(position).LeaveType
+        holder.status.text = applications.get(position).Department
 
     }
 

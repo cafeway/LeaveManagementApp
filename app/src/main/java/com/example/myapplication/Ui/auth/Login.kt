@@ -26,7 +26,7 @@ class Login : AppCompatActivity() {
         setContentView(R.layout.login)
 
 
-        val schools_spinner = findViewById<Spinner>(R.id.schoolsSpinner)
+        val schools_spinner = findViewById<Spinner>(R.id.departmentsSpinner)
         val county_spinner = findViewById<Spinner>(R.id.coursesSpinner)
         val gender = findViewById<Spinner>(R.id.genderSpinner)
         ArrayAdapter.createFromResource(
@@ -98,7 +98,7 @@ class Login : AppCompatActivity() {
         val Nssf = findViewById<EditText>(R.id.Nssf)
         val Email = findViewById<EditText>(R.id.ThirdName)
         val Password = findViewById<EditText>(R.id.Password)
-        val Department = findViewById<Spinner>(R.id.schoolsSpinner)
+        val Department = findViewById<Spinner>(R.id.departmentsSpinner)
         val Position = findViewById<Spinner>(R.id.coursesSpinner)
         val Gender = findViewById<Spinner>(R.id.genderSpinner)
         // Create JSON using JSONObject

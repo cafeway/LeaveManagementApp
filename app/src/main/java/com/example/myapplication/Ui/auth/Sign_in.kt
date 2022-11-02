@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.myapplication.Ui.auth
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,7 +8,11 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.ui.AppBarConfiguration
+import com.example.myapplication.Ui.employee.EmployeeDash
+import com.example.myapplication.MainActivity
+import com.example.myapplication.Models.Model
 import com.example.myapplication.Models.Reg_error
+import com.example.myapplication.R
 import com.example.myapplication.interfaces.AuthenicationInterface
 import com.example.myapplication.databinding.ActivitySignInBinding
 import com.google.gson.Gson
@@ -81,7 +85,7 @@ class sign_in : AppCompatActivity() {
                         "Success"->{
                             Toast.makeText(applicationContext, "Login was successful",Toast.LENGTH_LONG).show()
                             val intent = Intent(applicationContext, MainActivity::class.java)
-                            val intent2 = Intent(applicationContext,EmployeeDash::class.java).putExtra("Email",EmailField.text.toString())
+                            val intent2 = Intent(applicationContext, EmployeeDash::class.java).putExtra("Email",EmailField.text.toString())
                             if (bodyGson.Error[0] == "employee")
                             {
                                 startActivity(intent2)

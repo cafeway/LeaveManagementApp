@@ -6,16 +6,18 @@
         <entry key="app/src/main/res/drawable/background.xml" value="0.3484375" />
         <entry key="app/src/main/res/drawable/circle.xml" value="0.3484375" />
         <entry key="app/src/main/res/drawable/ic_baseline_cancel_24.xml" value="0.19791666666666666" />
+        <entry key="app/src/main/res/drawable/ic_baseline_fingerprint_24.xml" value="0.371875" />
         <entry key="app/src/main/res/drawable/id.xml" value="0.19895833333333332" />
-        <entry key="app/src/main/res/layout/activity_employee_dash.xml" value="0.11480263157894736" />
-        <entry key="app/src/main/res/layout/activity_login.xml" value="0.11480263157894736" />
+        <entry key="app/src/main/res/layout/activity_employee_dash.xml" value="0.17" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/activity_pending.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/activity_sign_in.xml" value="0.15" />
         <entry key="app/src/main/res/layout/activity_view_applications.xml" value="0.22" />
         <entry key="app/src/main/res/layout/addemployee.xml" value="0.33229166666666665" />
         <entry key="app/src/main/res/layout/content_employee_dash.xml" value="0.15" />
-        <entry key="app/src/main/res/layout/content_login.xml" value="0.16" />
-        <entry key="app/src/main/res/layout/content_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/content_login.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/content_main.xml" value="0.18799368088467613" />
         <entry key="app/src/main/res/layout/content_sign_in.xml" value="0.24074074074074073" />
         <entry key="app/src/main/res/layout/fragment_first.xml" value="0.33229166666666665" />
         <entry key="app/src/main/res/layout/fragment_first2.xml" value="0.33229166666666665" />

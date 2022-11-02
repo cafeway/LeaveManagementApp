@@ -5,18 +5,24 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class Application(
-    @SerialName("Date")
-    val Date: String,
+    @SerialName("EmployeeId")
+    val EmployeeId: String,
 
-    @SerialName("Type")
-    val Type:String,
+    @SerialName("LeaveType")
+    val LeaveType:String,
+
+    @SerialName("Department")
+    val Department: String,
+
+    @SerialName("StartDate")
+    val StartDate: String,
 
     @SerialName("Duration")
-    val Duration: String,
+    var Duration: Int,
 
-    @SerialName("UserId")
-    val UserId: String,
+    @SerialName("Remarks")
+     var Remarks: String,
 
-    @SerialName("Status")
-    var Status: String = "pending"
+    @SerialName("Email")
+    var Email: String,
 )

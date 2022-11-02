@@ -30,10 +30,10 @@
     <string-array name="Leaves">
         <item>Maternal Leave</item>
         <item>Sick Leave</item>
-        <item>Fraternal Leave</item>
-        <item>Security Leave</item>
-        <item>Scheduled Leave</item>
-        <item>Work Related Leave</item>
+        <item>Weekly Leave</item>
+        <item>Annual Leave</item>
+        <item>Emergency Leave</item>
+        <!--        <item>Other Leave</item>-->
 
     </string-array>
     <string-array name="Duration">

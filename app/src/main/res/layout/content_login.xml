@@ -1,114 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardView4"
     android:layout_width="match_parent"
-    android:background="@color/white"
     android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    android:background="@color/white"
+    android:clickable="true"
     android:elevation="20dp"
     app:cardCornerRadius="10dp"
-    android:clickable="true"
-    android:layout_margin="5dp"
-   android:layout_marginTop="5dp"
-    android:layout_marginBottom="5dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-    <RelativeLayout
-        android:layout_width="401dp"
-        android:layout_height="match_parent"
-        android:layout_margin="0dp"
-        android:background="@color/white">
+    <androidx.cardview.widget.CardView
+        android:layout_width="400dp"
+        android:layout_height="166dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/imageView7"
-            android:layout_width="64dp"
-            android:layout_height="34dp"
-            android:layout_below="@+id/imageView6"
-            android:layout_marginStart="20dp"
+        <RelativeLayout
+            android:id="@+id/relativeLayout4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_marginTop="10dp"
-            app:srcCompat="@drawable/ic_baseline_pending_actions_24" />
+            android:background="@color/white">
 
-        <TextView
-            android:id="@+id/duration"
-            android:layout_width="154dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="75dp"
-            android:layout_marginBottom="10dp"
-            android:fontFamily="@font/capriola"
-            android:gravity="center"
-            android:text="6 months"
-            android:textColor="@color/black" />
+            <TextView
+                android:id="@+id/applicationDate"
+                android:layout_width="287dp"
+                android:layout_height="36dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="17dp"
+                android:fontFamily="@font/capriola"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:text="Applied at"
+                android:textColor="@color/black" />
 
-        <TextView
-            android:id="@+id/applicationDate"
-            android:layout_width="155dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/duration"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="75dp"
-            android:fontFamily="@font/capriola"
-            android:gravity="center"
-            android:text="Wed Dec 2022"
-            android:textColor="@color/black"
-            android:textSize="20sp" />
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="64dp"
+                android:layout_height="34dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                app:srcCompat="@drawable/ic_baseline_date_range_24" />
 
-        <com.google.android.material.chip.Chip
-            android:layout_centerVertical="true"
-            android:clickable="true"
-            android:id="@+id/status_chip"
-            android:layout_width="81dp"
-            android:layout_height="40dp"
-            android:layout_below="@+id/leaveType"
-            android:layout_alignParentEnd="true"
-            android:layout_centerInParent="true"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="75dp"
-            android:layout_marginBottom="20dp"
-            android:gravity="center"
-            android:shadowColor="@color/green"
-            android:text="status"
-            android:textColor="@color/black"
-            app:chipBackgroundColor="#C63F43" />
+            <TextView
+                android:id="@+id/LeaveType"
+                android:layout_width="280dp"
+                android:layout_height="36dp"
+                android:layout_below="@id/applicationDate"
+                android:layout_alignParentEnd="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="24dp"
+                android:fontFamily="@font/capriola"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:text="Applied at"
+                android:textColor="@color/black" />
 
-        <TextView
-            android:id="@+id/leaveType"
-            android:layout_width="178dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/applicationDate"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="19dp"
-            android:layout_marginEnd="75dp"
-            android:fontFamily="@font/capriola"
-            android:gravity="center"
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="64dp"
+                android:layout_height="34dp"
+                android:layout_below="@id/imageView6"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                app:srcCompat="@drawable/ic_baseline_pending_actions_24" />
 
-            android:text="Maternal Leabe"
-            android:textColor="@color/black"
-            android:textSize="18sp" />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip"
+                android:background="@color/green"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imageView4"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/capriola"
+                android:text="status"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:chipStrokeColor="@color/green" />
 
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="65dp"
-            android:layout_height="34dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
-            app:srcCompat="@drawable/ic_baseline_access_time_24" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
 
-        <ImageView
-            android:id="@+id/imageView6"
-            android:layout_width="64dp"
-            android:layout_height="34dp"
-            android:layout_below="@+id/imageView4"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp
-"
-            app:srcCompat="@drawable/ic_baseline_date_range_24" />
-    </RelativeLayout>
-</androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

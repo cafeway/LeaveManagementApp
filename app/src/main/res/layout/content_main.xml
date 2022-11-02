@@ -2,20 +2,79 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center|center_horizontal"
+    android:background="@color/white"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+    <EditText
+        android:id="@+id/EmpId"
+        android:layout_width="375dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/background"
+        android:drawableStart="@drawable/id"
+        android:drawablePadding="10dp"
+        android:hint="EmployeeId"
+        android:inputType="text"
+        android:lines="1"
+        android:maxLength="15"
+
+        android:maxLines="1"
+        android:minHeight="48dp"
+        android:padding="10dp"
+        android:textColor="#234AAE"
+        android:textColorHighlight="#0E0E0E"
+        android:textColorHint="#2336AE"
+        android:textColorLink="#1D44A6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/informatory"
+        tools:ignore="DuplicateClickableBoundsCheck" />
+
+        <TextView
+            android:id="@+id/heading_title"
+            android:layout_width="318dp"
+            android:layout_height="31dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="25dp"
+            android:fontFamily="@font/capriola"
+            android:gravity="center"
+            android:text="Leave Application Form"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/informatoryBanner"
+            android:layout_width="363dp"
+            android:layout_height="53dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Please fill in the form if you need to leave work.All leave applications need to be approved by both the applicant and the employee biometrically"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.666"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/heading_title" />
 
 
     <Spinner
 
-        android:id="@+id/schoolsSpinner2"
-        android:layout_width="322dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="50dp"
+        android:id="@+id/dep"
+        android:layout_width="375dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="8dp"
         android:background="@drawable/background"
         android:focusable="auto"
         android:labelFor="@id/Id"
@@ -25,21 +84,36 @@
         android:spinnerMode="dropdown"
         android:tag="Course"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.8"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/schoolsSpinner"
-        tools:listheader="Deparment"
-        tools:listitem="Courses" />
+        app:layout_constraintTop_toBottomOf="@+id/departmentsSpinner"
+        tools:ignore="MissingConstraints"
+        tools:listfooter="schools"
+        tools:listheader="Deparment" />
+
+    <View
+            android:id="@+id/dividerBlack"
+            android:layout_width="409dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="40dp"
+            android:background="?android:attr/listDivider"
+            android:outlineAmbientShadowColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/informatory" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/heading"
         android:layout_width="318dp"
         android:layout_height="31dp"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="68dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="25dp"
         android:fontFamily="@font/capriola"
-        android:text="Apply For a Leave"
+        android:gravity="center"
+        android:text="Leave Application Form"
         android:textColor="@color/black"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,85 +121,27 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView10"
-        android:layout_width="217dp"
-        android:layout_height="22dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/capriola"
-        android:text="Work Needs Some Play"
+        android:id="@+id/informatory"
+        android:layout_width="363dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Please fill in the form if you need to leave work.All leave applications need to be approved by both the applicant and the employee biometrically"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.128"
+        app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        app:layout_constraintTop_toBottomOf="@+id/heading" />
 
-    <TextView
-
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="31dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="322dp"
-        android:fontFamily="@font/capriola"
-        android:text="Choose When To Commence leave"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.078"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.084"
-        app:layout_constraintStart_toEndOf="@+id/textView12"
-        app:layout_constraintTop_toBottomOf="@+id/textView10"
-        app:srcCompat="@drawable/ic_baseline_date_range_24" />
-
-    <DatePicker
-        android:id="@+id/DatePicker"
-        android:layout_width="353dp"
-        android:layout_height="163dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="50dp"
-        android:background="@color/purple_500"
-        android:calendarViewShown="false"
-        android:datePickerMode="spinner"
-        android:headerBackground="@color/yellow"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
-
-
-    <TextView
-        android:id="@+id/textView16"
-        android:layout_width="159dp"
-        android:layout_height="23dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="28dp"
-        android:fontFamily="@font/capriola"
-        android:text="Leave Type"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/DatePicker" />
 
     <Spinner
 
-        android:id="@+id/schoolsSpinner"
-        android:layout_width="322dp"
+        android:id="@+id/departmentsSpinner"
+        android:layout_width="375dp"
         android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="8dp"
         android:background="@drawable/background"
         android:focusable="auto"
         android:labelFor="@id/Id"
@@ -135,36 +151,109 @@
         android:spinnerMode="dropdown"
         android:tag="Course"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView16"
-        tools:listheader="Deparment"
-        tools:listitem="Courses" />
+        app:layout_constraintTop_toBottomOf="@+id/EmpId"
+        tools:ignore="MissingConstraints"
+        tools:listfooter="schools"
+        tools:listheader="Deparment" />
 
     <Button
         android:id="@+id/apply"
-        android:layout_width="220dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="124dp"
-        android:text="Apply"
+        android:layout_width="281dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="344dp"
+        android:drawableStart="@drawable/ic_baseline_fingerprint_24"
+        android:text="Verify Identity And Apply"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/schoolsSpinner" />
+        app:layout_constraintTop_toBottomOf="@+id/departmentsSpinner" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/departmentLabel"
         android:layout_width="250dp"
         android:layout_height="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:fontFamily="@font/capriola"
-        android:text="Desired Duration in months"
+        android:text="Type of Leave"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.061"
+        app:layout_constraintHorizontal_bias="0.198"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/schoolsSpinner" />
+        app:layout_constraintTop_toBottomOf="@+id/EmpId" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="409dp"
+        android:layout_height="1dp"
+        android:outlineAmbientShadowColor="@color/black"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="40dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/informatory" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="137dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/capriola"
+        android:text="Department"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/departmentsSpinner" />
+
+    <DatePicker
+        android:id="@+id/datePicker"
+        android:layout_width="373dp"
+        android:layout_height="147dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="8dp"
+        android:background="#242C75"
+        android:datePickerMode="spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.727"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dep" />
+
+    <TextView
+        android:id="@+id/DatePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="327dp"
+        android:fontFamily="@font/capriola"
+        android:text="Choose Your Desired Start Day"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dep" />
+
+    <TextView
+        android:id="@+id/TermsAndConditions"
+        android:layout_width="375dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="All Periods Are automatically generated according to company policy"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/datePicker" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
