@@ -20,7 +20,7 @@ data class Application(
     @SerialName("Duration")
     var Duration: Int,
 
-    @SerialName("Remarks")
+   @SerialName("Remarks")
      var Remarks: String,
 
     @SerialName("Email")

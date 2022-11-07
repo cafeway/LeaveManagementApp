@@ -16,7 +16,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="240dp"
+        android:layout_height="200dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,96 +29,87 @@
             android:layout_marginTop="10dp"
             android:background="@color/white">
 
-            <ImageView
-                android:id="@+id/imageView10"
-                android:layout_width="64dp"
-                android:layout_height="34dp"
-                android:layout_below="@id/imageView6"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="117dp"
-                app:srcCompat="@drawable/ic_baseline_date_range_24" />
+            <TextView
+                android:id="@+id/label3"
+                android:layout_width="150dp"
+                android:layout_height="42dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="232dp"
+                android:fontFamily="@font/capriola"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:text="Leave Type"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/label2"
+                android:layout_width="200dp"
+                android:layout_height="36dp"
+                android:layout_below="@id/employeeId"
+                android:layout_alignParentEnd="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="211dp"
+                android:fontFamily="@font/capriola"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:text="Duration In weeks"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/label1"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/leaveTypeAdmin"
+                android:layout_alignParentEnd="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="225dp"
+                android:fontFamily="@font/capriola"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:text="EmployeeId"
+                android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/leaveType2"
-                android:layout_width="280dp"
+                android:layout_width="150dp"
                 android:layout_height="36dp"
-                android:layout_below="@id/applicationDate"
+                android:layout_below="@id/employeeId"
                 android:layout_alignParentEnd="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="117dp"
-                android:layout_marginEnd="24dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginEnd="30dp"
                 android:fontFamily="@font/capriola"
                 android:gravity="center|center_horizontal|center_vertical"
                 android:text="Start Date"
                 android:textColor="@color/black" />
 
-            <ImageView
-                android:id="@+id/imageView8"
-                android:layout_width="64dp"
-                android:layout_height="34dp"
-                android:layout_below="@id/imageView6"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="65dp"
-                app:srcCompat="@drawable/ic_baseline_timer_24" />
-
             <TextView
-                android:id="@+id/duration"
-                android:layout_width="280dp"
-                android:layout_height="36dp"
-                android:layout_below="@id/applicationDate"
+                android:id="@+id/employeeId"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/leaveTypeAdmin"
                 android:layout_alignParentEnd="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="62dp"
-                android:layout_marginEnd="23dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="19dp"
                 android:fontFamily="@font/capriola"
                 android:gravity="center|center_horizontal|center_vertical"
                 android:text="Duration"
                 android:textColor="@color/black" />
 
             <TextView
-                android:id="@+id/applicationDate"
-                android:layout_width="287dp"
-                android:layout_height="36dp"
+                android:id="@+id/leaveTypeAdmin"
+                android:layout_width="150dp"
+                android:layout_height="42dp"
                 android:layout_alignParentEnd="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="17dp"
+                android:layout_marginEnd="39dp"
                 android:fontFamily="@font/capriola"
                 android:gravity="center|center_horizontal|center_vertical"
                 android:text="Leave Type"
                 android:textColor="@color/black" />
-
-            <ImageView
-                android:id="@+id/imageView6"
-                android:layout_width="64dp"
-                android:layout_height="34dp"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="10dp"
-                app:srcCompat="@drawable/ic_baseline_assignment_24" />
-
-            <TextView
-                android:id="@+id/LeaveType"
-                android:layout_width="280dp"
-                android:layout_height="36dp"
-                android:layout_below="@id/applicationDate"
-                android:layout_alignParentEnd="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="24dp"
-                android:fontFamily="@font/capriola"
-                android:gravity="center|center_horizontal|center_vertical"
-                android:text="Department"
-                android:textColor="@color/black" />
-
-            <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="64dp"
-                android:layout_height="34dp"
-                android:layout_below="@id/imageView6"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="15dp"
-                app:srcCompat="@drawable/ic_baseline_supervised_user_circle_24" />
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>

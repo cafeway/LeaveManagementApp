@@ -2,6 +2,8 @@ package com.example.myapplication.Ui.employee
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import android.widget.Button
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -29,9 +31,13 @@ class EmployeeDash : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.content_employee_dash)
+        setContentView(R.layout.activity_employee_dash)
 
-
+        // get the email passed in intents
+        val bundle: Bundle? = intent.extras
+        val a = bundle?.get("Email")
+        var mail = a.toString()
+        Log.d("email","$a")
         //get icons via id
         var apply_icon = findViewById<ImageView>(R.id.apply_icon)
         var pending_icon = findViewById<ImageView>(R.id.accomodation_icon)
@@ -40,55 +46,28 @@ class EmployeeDash : AppCompatActivity() {
         var settings_icon = findViewById<ImageView>(R.id.food_icon)
         var profile_icon = findViewById<ImageView>(R.id.library_icon)
 
-
-        // Define
-        // getting the recycler view
-        var recyclerView:RecyclerView = findViewById(R.id.recyclerView)
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.addItemDecoration(DividerItemDecoration(this,DividerItemDecoration.VERTICAL))
-        var adapter: ApplicationAdapter
-        // Passing User Email as an intent extra
-        val bundle: Bundle? = intent.extras
-        val a = bundle?.get("Email")
-
-        // Create Retrofit Instance
-        val retrofit = Retrofit.Builder()
-            .baseUrl("https://i-sms.herokuapp.com/")
-            .addConverterFactory( GsonConverterFactory.create())
-            .build()
-
-        // Create Service
-        val service = retrofit.create(EmployeeInterface::class.java)
-
-        service.getUserInfoByUser("$a").enqueue(object: Callback<GetResponse>{
-            override fun onResponse(call: Call<GetResponse>, response: Response<GetResponse>) {
-                recyclerView.adapter =
-                    response.body()?.let { ApplicationAdapter(this@EmployeeDash, it.application) }
-            }
-
-            override fun onFailure(call: Call<GetResponse>, t: Throwable) {
-                t.printStackTrace()
-            }
-
-        })
-
-        // inflate layout with a button Click
-        val button = findViewById<FloatingActionButton>(R.id.button)
-        button.setOnClickListener{
-            val intent2 = Intent(applicationContext, ApplyLeave::class.java).putExtra("Email","Email1@gmail.com")
-            startActivity(intent2)
-
+//        var b = findViewById<Button>(R.id.textView6)
+//        b.setOnClickListener{
+//            print("yes")
+//        }
+        // Define click listeners for each icon
+        apply_icon.setOnClickListener{
+            var applicatonIntent  = Intent(this,ApplyLeave::class.java).putExtra("Email","$a")
+            startActivity(applicatonIntent)
         }
-
+        pending_icon.setOnClickListener{
+            var pending = Intent(applicationContext,pending::class.java).putExtra("Email","$a")
+            startActivity(pending)
+        }
+        rejected_icon.setOnClickListener{
+            var applyLeave = Intent(applicationContext,Rejected::class.java).putExtra("Email","$a")
+            startActivity(applyLeave)
+        }
+        approved_icon.setOnClickListener{
+            var applyLeave = Intent(applicationContext,Approved::class.java).putExtra("Email","$a")
+            startActivity(applyLeave)
+        }
     }
-
-
-
-
-
-
-
-
 
 
 }

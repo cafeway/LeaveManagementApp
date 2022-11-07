@@ -13,8 +13,10 @@ import com.example.myapplication.MainActivity
 import com.example.myapplication.Models.Model
 import com.example.myapplication.Models.Reg_error
 import com.example.myapplication.R
+import com.example.myapplication.Ui.admin.Dashboard
 import com.example.myapplication.interfaces.AuthenicationInterface
 import com.example.myapplication.databinding.ActivitySignInBinding
+import com.google.firebase.iid.internal.FirebaseInstanceIdInternal
 import com.google.gson.Gson
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -38,6 +40,9 @@ class sign_in : AppCompatActivity() {
         // click listener
         loginButton.setOnClickListener() {
             login()
+        }
+        FirebaseInstanceIdInternal.NewTokenListener {
+
         }
     }
 
@@ -84,8 +89,11 @@ class sign_in : AppCompatActivity() {
                         "Password"->PasswordField.setError(bodyGson.Error[0])
                         "Success"->{
                             Toast.makeText(applicationContext, "Login was successful",Toast.LENGTH_LONG).show()
-                            val intent = Intent(applicationContext, MainActivity::class.java)
-                            val intent2 = Intent(applicationContext, EmployeeDash::class.java).putExtra("Email",EmailField.text.toString())
+                            val intent = Intent(applicationContext, Dashboard::class.java)
+                            val intent2 = Intent(applicationContext, EmployeeDash::class.java)
+                                .putExtra(
+                                    "Email",EmailField.text.toString(),
+                                )
                             if (bodyGson.Error[0] == "employee")
                             {
                                 startActivity(intent2)

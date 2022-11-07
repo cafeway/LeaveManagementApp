@@ -18,7 +18,8 @@ class ApplicationAdapter (private  val context: Context,private val applications
 //        val duration = itemView.findViewById<TextView?>(R.id.duration)
         val applicationDate = itemView.findViewById<TextView>(R.id.applicationDate)
         val type = itemView.findViewById<TextView>(R.id.LeaveType)
-        val status = itemView.findViewById<Chip>(R.id.chip)
+        val status = itemView.findViewById<TextView>(R.id.duration)
+        val end_date = itemView.findViewById<TextView>(R.id.leaveType2)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -27,10 +28,10 @@ class ApplicationAdapter (private  val context: Context,private val applications
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.applicationDate.text = applications.get(position).StartDate
-        holder.type.text = applications.get(position).LeaveType
-        holder.status.text = applications.get(position).Department
-
+        holder.applicationDate.text = applications.get(position).LeaveType
+        holder.type.text = applications.get(position).Department
+        holder.status.text = applications.get(position).Duration.toString()
+        holder.end_date.text = applications.get(position).StartDate
     }
 
     override fun getItemCount(): Int {

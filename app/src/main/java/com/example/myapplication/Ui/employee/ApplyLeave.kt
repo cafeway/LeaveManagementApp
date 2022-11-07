@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.provider.Settings
 import android.util.Log
 import android.widget.*
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.biometric.BiometricManager.Authenticators.*
 import androidx.core.content.ContextCompat
@@ -24,14 +23,14 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.*
 import java.util.concurrent.Executor
-
+import com.google.firebase.iid.FirebaseInstanceIdReceiver
 class ApplyLeave : AppCompatActivity(){
     private lateinit var executor: Executor
     private lateinit var biometricPrompt: androidx.biometric.BiometricPrompt
     private lateinit var promptInfo: androidx.biometric.BiometricPrompt.PromptInfo
     private var Email:String = ""
     private val calender = Calendar.getInstance()
-    @RequiresApi(Build.VERSION_CODES.N)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.content_main)
@@ -50,7 +49,7 @@ class ApplyLeave : AppCompatActivity(){
 
         val bundle: Bundle? = intent.extras
         val a = bundle?.get("Email")
-        Email  = a.toString()
+        var mail = a.toString()
         ArrayAdapter.createFromResource(
             this, R.array.schools,
             android.R.layout.simple_spinner_item
@@ -71,7 +70,7 @@ class ApplyLeave : AppCompatActivity(){
         val button = findViewById<Button>(R.id.apply)
         button.setOnClickListener{
 //            checkIfDeviceHasBiometrics()
-            applyLeave()
+            applyLeave(mail)
         }
 
         // work with executor
@@ -93,12 +92,12 @@ class ApplyLeave : AppCompatActivity(){
         override fun onAuthenticationSucceeded(result: androidx.biometric.BiometricPrompt.AuthenticationResult) {
             super.onAuthenticationSucceeded(result)
             Toast.makeText(this@ApplyLeave,"Your identity has been verified",Toast.LENGTH_LONG).show()
-            applyLeave()
+            applyLeave("ddd")
         }
 
     }
 
-    private fun applyLeave() {
+    private fun applyLeave(email: String) {
 
         // get instances of the input fields
         val EmployeeId = findViewById<EditText>(R.id.EmpId)
@@ -121,7 +120,7 @@ class ApplyLeave : AppCompatActivity(){
         val duration = getDuration(leaveType.selectedItem.toString())
 
         // create a model of application to be passed to the retrofit post request
-        val application = Application(id,type,workers_department,time,duration,remarks,Email)
+        val application = Application(id,type,workers_department,fullDate,duration,remarks,email)
 
         // Create Retrofit
         val retrofit = Retrofit.Builder()
@@ -146,6 +145,7 @@ class ApplyLeave : AppCompatActivity(){
                     when(converted_data.Field){
                         "Success"-> Toast.makeText(this@ApplyLeave,"Your application was successful",Toast.LENGTH_LONG).show()
                         "Application"-> Toast.makeText(this@ApplyLeave,"Your have a pending leave awaiting approval",Toast.LENGTH_LONG).show()
+                        "Id"-> Toast.makeText(this@ApplyLeave,"The employee id entered does not exist",Toast.LENGTH_LONG).show()
                     }
                 }else {
 
